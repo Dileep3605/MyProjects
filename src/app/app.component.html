@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">ResumeApp</a>
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/resume" routerLinkActive="active">Resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dragAndDrop" routerLinkActive="active">Drag and Drop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/reactiveform" routerLinkActive="active">Reactive Form</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/chatbot" routerLinkActive="active">Chatbot</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/glass" routerLinkActive="active">Specs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="mainContainer">
+  <router-outlet></router-outlet>
+</div>

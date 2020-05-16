@@ -1,0 +1,14 @@
+<div class="row mx-0 pt-3 ">
+  <div class="glassWreckContainer px-0 mb-5" *ngFor="let data of Gdata">
+    <div class="shelves">
+      <div class="googlesImg align-self-center">
+        <img src="{{data.Image}}" alt="" class="img-fluid animated bounce">
+      </div>
+
+    </div>
+    <div class="googlesDetails p-2 d-flex flex-wrap align-items-center justify-content-between">
+      <span>{{data.Name}}</span>
+      <span>{{data.Price}}</span>
+    </div>
+  </div>
+</div>

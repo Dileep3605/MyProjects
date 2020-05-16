@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mt-4">
+        <div class="card-header">Create Employee</div>
+        <div class="card-body">
+          <form [formGroup]="employeeForm" (ngSubmit)="saveEmpoyee()" novalidate class="form-horizontal">
+            <div class="form-group row">
+              <label for="fullname" class="col-sm-3 text-md-right form-weight-bold col-form-label">Full Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="fullName" formControlName="fullName" [ngClass]="{'is-invalid':formErrors.fullName, 'is-valid':employeeForm.get('fullName').valid}"
+                  (blur)="logKeyValuePairs()">
+                <span *ngIf="formErrors.fullName" [ngClass]="{'invalid-feedback':formErrors.fullName}">
+                  {{formErrors.fullName}}
+                </span>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 text-md-right form-weight-bold col-form-label">Contact Preference</label>
+              <div class="col-sm-8">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input" id="emailPref" formControlName="contactPrefernce"
+                    value="emailPref">
+                  <label class="custom-control-label" for="emailPref">Email</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input" id="phonePref" value="phonePref" formControlName="contactPrefernce">
+                  <label class="custom-control-label" for="phonePref">Phone</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 text-md-right form-weight-bold col-form-label">Email</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid':formErrors.email, 'is-valid':employeeForm.get('email').valid}"
+                  (blur)="logKeyValuePairs()">
+                <span *ngIf="formErrors.email" [ngClass]="{'invalid-feedback':formErrors.email}">
+                  {{formErrors.email}}
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="phone" class="col-sm-3 text-md-right form-weight-bold col-form-label">Phone</label>
+              <div class="col-sm-8">
+                <input type="phone" class="form-control" id="phone" formControlName="phone" [ngClass]="{'is-invalid':formErrors.phone, 'is-valid':(employeeForm.get('phone').valid && employeeForm.get('phone').touched) && showPhoneMsg }"
+                  (blur)="logKeyValuePairs()">
+                <span *ngIf="formErrors.phone" [ngClass]="{'invalid-feedback':formErrors.phone}">
+                  {{formErrors.phone}}
+                </span>
+              </div>
+            </div>
+            <div class="">
+              <div formGroupName="skills">
+                <div class="row form-group">
+                  <label for="email" class="text-md-right form-weight-bold col-form-label col-sm-3">Skills</label>
+                  <div class="col-sm-6">
+                    <input type="text" formControlName="skillName" id="skillName" class="form-control" [ngClass]="{'is-invalid':formErrors.skillName}"
+                      (blur)="logKeyValuePairs()">
+                    <span *ngIf="formErrors.skillName" [ngClass]="{'invalid-feedback':formErrors.skillName}">
+                      {{formErrors.skillName}}
+                    </span>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label for="email" class="text-md-right form-weight-bold col-form-label col-sm-3">Experience</label>
+                  <div class="col-sm-6">
+                    <input type="text" formControlName="experienceInYears" id="experienceInYears" class="form-control"
+                      [ngClass]="{'is-invalid':formErrors.experienceInYears}" (blur)="logKeyValuePairs()">
+                    <span *ngIf="formErrors.experienceInYears" [ngClass]="{'invalid-feedback':formErrors.experienceInYears}">
+                      {{formErrors.experienceInYears}}
+                    </span>
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label class="col-sm-3 text-md-right form-weight-bold col-form-label">Proficiency</label>
+                  <div class="col-sm-8">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" class="custom-control-input" id="beginner" formControlName="proficiency"
+                        value="beginner" [ngClass]="{'is-invalid':formErrors.proficiency}" (blur)="logKeyValuePairs()">
+                      <label class="custom-control-label" for="beginner">Beginner</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" class="custom-control-input" id="intermediate" value="intermediate"
+                        formControlName="proficiency" [ngClass]="{'is-invalid':formErrors.proficiency}" (blur)="logKeyValuePairs()">
+
+                      <label class="custom-control-label" for="intermediate">Intermediate</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" class="custom-control-input" id="advanced" value="advanced" formControlName="proficiency"
+                        [ngClass]="{'is-invalid':formErrors.proficiency}" (blur)="logKeyValuePairs()">
+                      <label class="custom-control-label" for="advanced">Advanced</label>
+                    </div>
+                    <span *ngIf="formErrors.proficiency" [ngClass]="{'invalid-feedback':formErrors.proficiency}">
+                      {{formErrors.proficiency}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-3 col-md-right"></label>
+              <div class="col-sm-8">
+                <button type="submit" class="btn btn-primary mr-2" [disabled]="!employeeForm.valid">Save</button>
+                <button type="button" class="btn btn-primary mr-2" (click)="onLoadDataClick()">Edit</button>
+                <button type="button" class="btn btn-primary " (click)="onResetClick()">Reset</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
