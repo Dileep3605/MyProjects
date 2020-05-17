@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1589725028473,
+  "timestamp": 1589726812719,
   "index": "https://dileep3605.github.io/MyProjects/index.html",
   "assetGroups": [
     {
@@ -165,7 +165,7 @@
     "https://dileep3605.github.io/MyProjects/runtime-es2015.js": "6fe0f4ff731be84259ccc455c225a136f336349f",
     "https://dileep3605.github.io/MyProjects/runtime-es5.js": "c1cb0149702b287f2c9c8ec11b3b74da9065416a",
     "https://dileep3605.github.io/MyProjects/shelves2.jpg": "a60b9220a25b90ebed35f2d32e077ce040dff1d2",
-    "https://dileep3605.github.io/MyProjects/styles.css": "a14b1e93a51c49ffccb1e23f092f84ddb97b05f1"
+    "https://dileep3605.github.io/MyProjects/styles.css": "a6d58ba28cb95b300782212a227d3e31f58b4e95"
   },
   "navigationUrls": [
     {
