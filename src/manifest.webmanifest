@@ -1,11 +1,11 @@
 {
-  "name": "NewResumeApp",
-  "short_name": "NewResumeApp",
-  "theme_color": "#1976d2",
+  "name": "Resume",
+  "short_name": "Resume",
+  "theme_color": "#06a763",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://dileep3605.github.io/MyProjects/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

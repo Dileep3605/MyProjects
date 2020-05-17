@@ -13,7 +13,7 @@ const routerData:Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routerData,{preloadingStrategy:PreloadAllModules, useHash: true}),
+    RouterModule.forRoot(routerData,{preloadingStrategy:PreloadAllModules}),
   ],
   exports: [RouterModule]
 })
