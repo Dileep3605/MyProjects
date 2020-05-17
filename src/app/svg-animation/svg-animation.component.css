@@ -1,0 +1,52 @@
+#back-wheel,
+#front-wheel {
+  animation: wheel 1s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#man-in-bike {
+  animation: man-bike 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+#hat {
+  animation: hat 1s ease-in-out alternate infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes man-bike {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(20deg);
+  }
+}
+
+@keyframes hat {
+  from {
+    transform: translateY(0%) rotateZ(0deg);
+  }
+  to {
+    transform: translateY(30%) rotateZ(20deg);
+  }
+}
+.svg-animation svg {
+    width: 50%;
+  }
+
+@media (max-width: 992px) {
+  .svg-animation svg {
+    width: 100% !important;
+  }
+}
