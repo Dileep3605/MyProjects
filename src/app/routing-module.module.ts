@@ -31,7 +31,12 @@ const routerData: Routes = [
   },
   {
     path: "svganimation",
-    loadChildren: "./svg-animation/svg-animation.module#SvgAnimationModule"
+    loadChildren: "./svg-animation/svg-animation.module#SvgAnimationModule",
+  },
+  {
+    path: "tictoctoe",
+    loadChildren: () =>
+      import("./tictoctoe/tictoctoe.module").then((m) => m.TicTocToeModule),
   },
   { path: "**", component: PagenotfoundComponent },
 ];

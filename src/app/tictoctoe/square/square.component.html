@@ -1,0 +1,3 @@
+<button *ngIf="!value" mat-button>{{ value }}</button>
+<button status="success" mat-raised-button color="accent" *ngIf="value == 'X'">{{ value }}</button>
+<button status="info" *ngIf="value == 'O'">{{ value }}</button>
