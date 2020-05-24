@@ -25,6 +25,7 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(index: number) {
+    debugger;
     if (!this.squares[index]) {
       this.squares.splice(index, 1, this.player);
       this.xIsNext = !this.xIsNext;

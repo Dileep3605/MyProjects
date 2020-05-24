@@ -1,14 +1,33 @@
-<h1>Current Player: {{ player }}</h1>
-
-<button (click)="newGame()">
-  Start new Game
-</button>
-
-<h2 *ngIf="winner">Player {{ winner }} won the game!</h2>
-<div class="tic-toc-toe">
-  <app-square
-    [value]="square"
-    (click)="makeMove(i)"
-    *ngFor="let square of squares; let i = index"
-  ></app-square>
+<div>
+  <div>
+    <h1 class="curret-player">
+      Current Player:
+      <span
+        [ngClass]="{ 'player-x': player == 'X', 'player-o': player == 'O' }"
+        >{{ player }}</span
+      >
+    </h1>
+    <button (click)="newGame()" mat-raised-button color="primary" class="mb-4">
+      Start new Game
+    </button>
+  </div>
+  <h2 *ngIf="winner" class="game-winner">
+    Player
+    <span
+      [ngClass]="{ 'winner-x': winner == 'X', 'winner-o': winner == 'O' }"
+      >{{ winner }}</span
+    >
+    won the game!
+  </h2>
+  <mat-card *ngIf="!winner" class="game-board d-inline-flex">
+    <mat-card-content>
+      <div class="tic-toc-toe">
+        <app-square
+          [value]="square"
+          (click)="makeMove(i)"
+          *ngFor="let square of squares; let i = index"
+        ></app-square>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
