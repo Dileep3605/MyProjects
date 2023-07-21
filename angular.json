@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "NewResumeApp"
+  "defaultProject": "NewResumeApp",
+  "cli": {
+    "analytics": "a7f61a54-5e96-4138-abf7-91e85b98f482"
+  }
 }
